@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class Landing extends Component {
 
@@ -9,9 +9,13 @@ export default class Landing extends Component {
 
   render () {
     return (
-      <div className='Landing d-flex flex-column align-items-center justify-content-center'>
-        <h1>Architecture JS</h1>
-      </div>
+      <header className="masthead">
+        <div className="header-content">
+          <div className="header-content-inner">
+            <h1 id="homeHeading" className="text-shadow">Architecture JS</h1>
+          </div>
+        </div>
+      </header>
     );
   }
 
