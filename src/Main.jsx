@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 // import main CSS styles
-import './assets/scss/styles.scss';
+import 'styles';
 
 import Landing from './containers/Landing/Landing';
 
