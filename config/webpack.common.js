@@ -74,7 +74,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: setupPath('../index.html')
+      template: setupPath('../src/index.html')
     })
   ]
 };
