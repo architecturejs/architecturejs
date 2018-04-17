@@ -52,7 +52,6 @@ module.exports = (env) => {
             'react-router',
             'redux',
             'react-redux',
-            'bootstrap'
           ]
         },
         dllDir: './dll',

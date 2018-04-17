@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 
-export default class Landing extends Component {
+import './Landing.scss';
 
-  constructor() {
-    super();
-  }
-
+class Landing extends Component {
   render () {
     return (
-      <header className="masthead">
-        <div className="header-content">
-          <div className="header-content-inner">
-            <h1 id="homeHeading" className="text-shadow">Architecture JS</h1>
-          </div>
-        </div>
+      <header className="container mx-auto">
+        <h1 className="text-center text-5xl">Architecture JS</h1>
       </header>
     );
   }
-
 }
+
+export default Landing;

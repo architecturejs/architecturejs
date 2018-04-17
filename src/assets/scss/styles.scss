@@ -1,13 +1,5 @@
-// import bootstrap.scss file
-@import '~bootstrap/scss/bootstrap.scss';
+@tailwind preflight;
 
-@import 'variables.scss';
-@import 'utilities';
-@import 'mixins.scss';
-@import 'global.scss';
-@import 'navbar.scss';
-@import 'bootstrap-overrides.scss';
+@tailwind components;
 
-// glob for the rest of the site
-
-@import '../../containers/**/*.scss';
+@tailwind utilities;

@@ -1,5 +1,6 @@
 const { setupPath } = require('./helpers');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
@@ -44,23 +45,15 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss/,
-        enforce: 'pre',
-        loader: 'import-glob-loader'
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ],
+        test:/\.(s*)css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            { loader: 'css-loader', options: { importLoaders: 1 } },
+            'sass-loader',
+            'postcss-loader'
+          ]
+        })
       },
       {
         test: /\.(png|jpe?g|gif)$/,
@@ -73,6 +66,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new ExtractTextPlugin({filename:'aj.bundle.css'}),
     new HtmlWebpackPlugin({
       template: setupPath('../src/index.html')
     })
