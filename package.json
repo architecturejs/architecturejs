@@ -19,7 +19,7 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   },
-  "repository": "git+https://github.com/architecturejs/architecturejs.git",
+  "repository": "git+https://github.com/architecturejs/aj-site.git",
   "keywords": [
     "js",
     "architecture",
@@ -39,9 +39,9 @@
   "author": "Аневризма",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/architecturejs/architecturejs/issues"
+    "url": "https://github.com/architecturejs/aj-site/issues"
   },
-  "homepage": "https://github.com/architecturejs/architecturejs#readme",
+  "homepage": "https://github.com/architecturejs/aj-site#readme",
   "devDependencies": {
     "add-asset-html-webpack-plugin": "2.1.1",
     "babel-core": "6.26.0",
