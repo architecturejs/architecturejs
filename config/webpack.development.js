@@ -12,6 +12,8 @@ module.exports = (env) => {
 
   return webpackMerge(commonConfig, {
 
+    mode: 'development',
+
     devtool: 'source-map',
 
     output: {

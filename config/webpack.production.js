@@ -11,6 +11,8 @@ module.exports = (env) => {
 
   return webpackMerge(commonConfig, {
 
+    mode: 'production',
+
     devtool: 'source-map',
 
     output: {
@@ -32,26 +34,13 @@ module.exports = (env) => {
     },
 
     plugins: [
-      new Webpack.optimize.UglifyJsPlugin({
-        beautify: false,
-        mangle: {
-          screw_ie8: true,
-          keep_fnames: true
-        },
-        compress: {
-          screw_ie8: true
-        },
-        comments: false
-      }),
       new ExtractTextPlugin('[name].[hash].css'),
-      new Webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(ENV)
-      })/*,
+      /*,
        new ScriptExtHtmlWebpackPlugin({
        defaultAttribute: 'defer'
        })*/
     ],
-   /* externals: {
+    /* externals: {
       // Use external version of React
       'react': 'React',
       'react-dom': 'ReactDOM'
