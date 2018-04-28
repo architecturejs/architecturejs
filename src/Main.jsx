@@ -9,7 +9,7 @@ import {
 // import main CSS styles
 import 'styles';
 
-import Landing from './containers/Landing/Landing';
+import Landing from './pages/Landing/Landing';
 
 class MainComponent extends React.Component {
 

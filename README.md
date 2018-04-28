@@ -2,6 +2,6 @@
 
 A place to put the best architectures for any kind of JS project/app
 
-### This project uses startbootstrap
+### This project uses Tailwindcss
 
-https://github.com/BlackrockDigital/startbootstrap-creative
+https://tailwindcss.com/
