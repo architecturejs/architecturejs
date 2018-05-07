@@ -1,9 +1,10 @@
-import React from 'react';
+// @flow
+
+import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
 
 // import main CSS styles
@@ -11,7 +12,7 @@ import 'styles';
 
 import Landing from './pages/Landing/Landing';
 
-class MainComponent extends React.Component {
+class MainComponent extends Component {
 
   render() {
     return (
