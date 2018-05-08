@@ -5,9 +5,9 @@ import './Landing.scss';
 class Landing extends Component {
   render () {
     return (
-      <header className="container mx-auto">
+      <section className="h-screen flex flex-col justify-center">
         <h1 className="text-center text-5xl">Architecture JS</h1>
-      </header>
+      </section>
     );
   }
 }
