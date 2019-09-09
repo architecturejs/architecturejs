@@ -1,10 +1,12 @@
 const { setupPath } = require('./helpers');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const prodMode = process.env.ENV = 'production';
 
 module.exports = {
 
-  entry: './src/Main.jsx',
+  entry: './src/Main.js',
 
   resolve: {
     alias: {
@@ -34,26 +36,28 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: prodMode ? MiniCssExtractPlugin.loader : 'style-loader',
           },
           {
             loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader', // Run post css actions
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('tailwindcss'),
+                require('autoprefixer'),
+              ],
+            },
+          },
+          {
+            loader: 'sass-loader'
           }
-        ]
-      },
-      {
-        test:/\.(s*)css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { importLoaders: 1 } },
-            'sass-loader',
-            'postcss-loader'
-          ]
-        })
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/,
@@ -66,7 +70,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({filename:'aj.bundle.css'}),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: prodMode ? '[name].[hash].css' : '[name].css',
+      chunkFilename: prodMode ? '[id].[hash].css' : '[id].css',
+    }),
     new HtmlWebpackPlugin({
       template: setupPath('../src/index.html')
     })
