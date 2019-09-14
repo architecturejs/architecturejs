@@ -12,20 +12,14 @@ import 'styles';
 
 import Landing from './pages/Landing/Landing';
 
-class MainComponent extends Component {
+const Main = () => (
+  <Router>
+    <main>
+      <div>
+        <Route exact path="/" component={Landing} />
+      </div>
+    </main>
+  </Router>
+);
 
-  render() {
-    return (
-      <Router>
-        <main>
-          <div>
-            <Route exact path="/" component={Landing} />
-          </div>
-        </main>
-      </Router>
-    );
-  }
-  
-}
-
-ReactDom.render(<MainComponent />, document.querySelector('#app'));
+ReactDom.render(<Main />, document.querySelector('#app'));
