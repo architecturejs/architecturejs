@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDom from 'react-dom';
 import {
   BrowserRouter as Router,
@@ -22,4 +22,8 @@ const Main = () => (
   </Router>
 );
 
-ReactDom.render(<Main />, document.querySelector('#app'));
+const app = document.querySelector('#app');
+
+if (app) {
+  ReactDom.render(<Main />, app);
+}
