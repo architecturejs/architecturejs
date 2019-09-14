@@ -1,11 +1,7 @@
-const Webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const commonConfig = require('./webpack.common.js');
 const { productionPath } = require('./helpers');
-
-const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
 module.exports = (env) => {
 
@@ -34,7 +30,6 @@ module.exports = (env) => {
     },
 
     plugins: [
-      new ExtractTextPlugin('[name].[hash].css'),
       /*,
        new ScriptExtHtmlWebpackPlugin({
        defaultAttribute: 'defer'
