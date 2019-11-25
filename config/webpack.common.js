@@ -1,8 +1,15 @@
+const webpack = require('webpack');
+
 const { setupPath } = require('./helpers');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const prodMode = process.env.ENV = 'production';
+
+const progressHandler = (percentage, message, ...args) => {
+  // e.g. Output each progress message directly to the console:
+  console.info(percentage, message, ...args);
+};
 
 module.exports = {
 
@@ -70,6 +77,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProgressPlugin(progressHandler),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
