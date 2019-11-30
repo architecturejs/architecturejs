@@ -13,7 +13,7 @@
     "coverage:open": "open coverage/lcov-report/index.html",
     "test:u": "npm t -- -u",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "plop": "rimraf src/app/components && plop"
+    "plop": "rimraf src/app/components && plop --plopfile config/plop/plopfile.js"
   },
   "config": {
     "commitizen": {

@@ -1,5 +1,8 @@
-const components = './src/app/components';
-const templates = './config/plop/component';
+const { src } = require('../paths');
+
+const components = `${src}/app/components`;
+
+const templatesPath = './component';
 
 module.exports = function plopFn(plop) {
   plop.setGenerator('React Component', {
@@ -32,9 +35,9 @@ module.exports = function plopFn(plop) {
           ...actionsForComponents,
           {
             type: 'addMany',
-            base: templates,
+            base: templatesPath,
             destination: `${components}/{{properCase componentName}}${i}`,
-            templateFiles:`${templates}/*`,
+            templateFiles:`${templatesPath}/*`,
             stripExtensions: ['plop'],
             data: {
               fullComponentName: `${componentName}${j}`,
