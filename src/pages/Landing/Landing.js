@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Test from '../../app/components/Test0';
+
 import './Landing.scss';
 
 class Landing extends Component {
